@@ -25,7 +25,7 @@ export function BookSection() {
           <div className="relative h-56 w-40 sm:h-64 sm:w-48 rounded-lg bg-slate-200 dark:bg-slate-700 shadow-xl overflow-hidden">
             {!bannerError && (
             <Image
-              src="/banner.jpg"
+              src="/banner.png"
               alt="Sampul Khusyuk Itu Mudah"
               fill
               className="object-cover"
