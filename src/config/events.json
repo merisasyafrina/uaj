@@ -1,0 +1,16 @@
+{
+  "title": "Acara",
+  "subtitle": "Kajian dan kegiatan terkait buku Khusyuk Itu Mudah.",
+  "events": [
+    {
+      "id": "event-1",
+      "title": "Kajian Khusyuk Itu Mudah",
+      "description": "Kajian perdana peluncuran buku digital Khusyuk Itu Mudah. Mari hadir dan dapatkan insight langsung dari penulis.",
+      "flyerUrl": "/events/flyer-placeholder.jpg",
+      "startDate": "2025-03-15",
+      "endDate": "2025-03-15",
+      "ctaUrl": "https://example.com/daftar",
+      "ctaLabel": "Daftar Sekarang"
+    }
+  ]
+}
