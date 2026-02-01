@@ -1,5 +1,11 @@
 import { createClient } from '@/lib/supabase/server';
+import {
+  cleanupExpiredTokens,
+  downloadTokens,
+  DOWNLOAD_TOKEN_TTL_MS,
+} from '@/lib/download-tokens';
 import { NextRequest, NextResponse } from 'next/server';
+import { randomBytes } from 'crypto';
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,7 +31,18 @@ export async function POST(request: NextRequest) {
     }
 
     const pdfUrl = process.env.NEXT_PUBLIC_BOOK_PDF_URL || '';
-    return NextResponse.json({ success: true, pdfUrl });
+    let downloadToken = '';
+
+    if (pdfUrl) {
+      cleanupExpiredTokens();
+      downloadToken = randomBytes(24).toString('hex');
+      downloadTokens.set(downloadToken, {
+        pdfUrl,
+        exp: Date.now() + DOWNLOAD_TOKEN_TTL_MS,
+      });
+    }
+
+    return NextResponse.json({ success: true, pdfUrl, downloadToken });
   } catch (e) {
     console.error('Download API error:', e);
     return NextResponse.json(

@@ -2,6 +2,12 @@
 
 import { useState } from 'react';
 
+function isMobile(): boolean {
+  if (typeof window === 'undefined') return false;
+  const ua = navigator.userAgent;
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua) || (navigator.maxTouchPoints > 0 && window.innerWidth < 768);
+}
+
 export function DownloadSection() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -10,6 +16,11 @@ export function DownloadSection() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email.trim()) return;
+
+    const mobile = isMobile();
+    // Open new window during user gesture so mobile browsers don't block it
+    const newWindow = typeof window !== 'undefined' ? window.open('', '_blank', 'noopener,noreferrer') : null;
+
     setStatus('loading');
     setMessage('');
 
@@ -24,22 +35,37 @@ export function DownloadSection() {
       if (!res.ok) {
         setStatus('error');
         setMessage(data?.error || 'Gagal. Silakan coba lagi.');
+        if (newWindow) newWindow.close();
         return;
       }
 
       setStatus('success');
-      setMessage('Terima kasih! PDF akan dibuka di tab baru.');
+      setMessage(mobile ? 'Terima kasih! PDF akan diunduh ke perangkat Anda.' : 'Terima kasih! PDF akan dibuka di tab baru.');
       setEmail('');
 
       const pdfUrl = data?.pdfUrl;
-      if (pdfUrl) {
-        window.open(pdfUrl, '_blank', 'noopener,noreferrer');
+      const downloadToken = data?.downloadToken;
+
+      if (mobile && downloadToken) {
+        // On mobile: use proxy so browser downloads file to device (Content-Disposition: attachment)
+        const downloadUrl = `/api/download-pdf?token=${encodeURIComponent(downloadToken)}`;
+        if (newWindow) {
+          newWindow.location.href = downloadUrl;
+        } else {
+          window.location.href = downloadUrl;
+        }
+      } else if (pdfUrl && newWindow) {
+        newWindow.location.href = pdfUrl;
+      } else if (pdfUrl && !newWindow) {
+        window.location.href = pdfUrl;
       } else {
         setMessage('Email tersimpan. Link PDF belum dikonfigurasi (NEXT_PUBLIC_BOOK_PDF_URL).');
+        if (newWindow) newWindow.close();
       }
     } catch {
       setStatus('error');
       setMessage('Gagal mengirim. Periksa koneksi dan coba lagi.');
+      if (newWindow) newWindow.close();
     }
   }
 
