@@ -1,21 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 function isMobile(): boolean {
   if (typeof window === 'undefined') return false;
   const ua = navigator.userAgent;
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua) || (navigator.maxTouchPoints > 0 && window.innerWidth < 768);
+  const nav = navigator as Navigator & { standalone?: boolean; platform?: string };
+  return (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua) ||
+    nav.platform === 'iPhone' ||
+    nav.platform === 'iPad' ||
+    nav.standalone === true ||
+    (navigator.maxTouchPoints > 0 && window.innerWidth < 768)
+  );
 }
 
 export function DownloadSection() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
+  const submittingRef = useRef(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email.trim()) return;
+    if (submittingRef.current) return;
+    submittingRef.current = true;
 
     const mobile = isMobile();
     // On desktop only: open new window during user gesture so browsers don't block it
@@ -65,6 +75,8 @@ export function DownloadSection() {
       setStatus('error');
       setMessage('Gagal mengirim. Periksa koneksi dan coba lagi.');
       if (newWindow) newWindow.close();
+    } finally {
+      submittingRef.current = false;
     }
   }
 
