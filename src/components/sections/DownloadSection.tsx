@@ -18,8 +18,11 @@ export function DownloadSection() {
     if (!email.trim()) return;
 
     const mobile = isMobile();
-    // Open new window during user gesture so mobile browsers don't block it
-    const newWindow = typeof window !== 'undefined' ? window.open('', '_blank', 'noopener,noreferrer') : null;
+    // On desktop only: open new window during user gesture so browsers don't block it
+    const newWindow =
+      !mobile && typeof window !== 'undefined'
+        ? window.open('', '_blank', 'noopener,noreferrer')
+        : null;
 
     setStatus('loading');
     setMessage('');
@@ -47,13 +50,9 @@ export function DownloadSection() {
       const downloadToken = data?.downloadToken;
 
       if (mobile && downloadToken) {
-        // On mobile: use proxy so browser downloads file to device (Content-Disposition: attachment)
+        // On mobile: navigate current tab to download URL so file downloads (no about:blank tab)
         const downloadUrl = `/api/download-pdf?token=${encodeURIComponent(downloadToken)}`;
-        if (newWindow) {
-          newWindow.location.href = downloadUrl;
-        } else {
-          window.location.href = downloadUrl;
-        }
+        window.location.href = downloadUrl;
       } else if (pdfUrl && newWindow) {
         newWindow.location.href = pdfUrl;
       } else if (pdfUrl && !newWindow) {
