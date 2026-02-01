@@ -7,7 +7,7 @@ export const downloadTokens = new Map<
 
 export function cleanupExpiredTokens() {
   const now = Date.now();
-  for (const [token, { exp }] of downloadTokens.entries()) {
+  Array.from(downloadTokens.entries()).forEach(([token, { exp }]) => {
     if (exp < now) downloadTokens.delete(token);
-  }
+  });
 }
