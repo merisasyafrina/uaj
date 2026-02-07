@@ -15,8 +15,12 @@ Buku ini membahas inti khusyu yang jarang dibahas. Dibuat dengan bahasa yang mud
 `.trim();
 
 const AuthorProfile = `
-Arifin Jayadiningrat bin Abdurrahman Romli adalah seorang ustadz dan konsultan pendidikan karakter.  Beliau menempuh pendidikan di Pondok Pesantren Darussalam Gontor, IPD Gontor, IAIN Jakarta, Zaituna University (Tunisia), Amir Abdul Qodir University (Aljazair), Al-Azhar University (Mesir), dan Jamiat Duwal Arabiyah (Universitas Liga Arab) dengan fokus pada aqidah, filsafat, serta perbandingan hukum Islam. Aktif sebagai ketua di Aksi Peduli Bangsa, Yayasan Pendidikan Islam Al Madaniyah Al Husna, serta aktif di dalam tim kurikulum Milbos dan STIPI Maghfirah. Beliau juga merupakan pembimbing umroh dan haji sejak 1992. Moto utama mengumpulkan bekal akhirat untuk kehidupan yang abadi.
-`.trim();
+Arifin Jayadiningrat bin Abdurrahman Romli adalah seorang ustadz dan konsultan pendidikan karakter.  Beliau menempuh pendidikan di Pondok Pesantren Darussalam Gontor, IPD Gontor, IAIN Jakarta, Zaituna University (Tunisia), Amir Abdul Qodir University Constantine (Aljazair), Al-Azhar University (Mesir), dan Jamiat Duwal Arabiyah (Universitas Liga Arab) dengan fokus pada aqidah, filsafat, serta perbandingan hukum Islam. 
+
+Aktif sebagai ketua di Aksi Peduli Bangsa, Yayasan Pendidikan Islam Al Madaniyah Al Husna, serta aktif di dalam tim kurikulum Milbos dan STIPI Maghfirah. 
+
+Moto utama mengumpulkan bekal akhirat untuk kehidupan yang abadi.
+ `.trim();
 
 const SHARE_TITLE = 'Khusyuk Itu Mudah';
 
