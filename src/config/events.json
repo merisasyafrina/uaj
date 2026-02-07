@@ -6,7 +6,7 @@
       "id": "event-1",
       "title": "🕌 Kuliah Subuh",
       "description": "Mari raih keberkahan ilmu di pagi yang penuh cahaya! Ajak keluarga & sahabat tercinta untuk ikut serta",
-      "flyerUrl": "/events/flyer-placeholder.jpg",
+      "flyerUrl": "/events/kuliahSubuh.jpeg",
       "date": "⏰ Setiap hari | Pukul 05.00 WIB",
       "ctaUrl": "https://example.com/daftar",
       "ctaLabel": "Daftar Sekarang"
@@ -15,7 +15,7 @@
       "id": "event-2",
       "title": "📖 Kajian Pekanan",
       "description": "Rasulullah ﷺ bersabda:\nBarang siapa menempuh jalan untuk menuntut ilmu, maka Allah akan mudahkan baginya jalan menuju surga.\n(HR. Sahih Muslim no. 2699).",
-      "flyerUrl": "/events/flyer-placeholder.jpg",
+      "flyerUrl": "/events/kajianUmum.jpeg",
       "date": "⏰ Setiap hari Senin | Pukul 09.00 WIB",
       "ctaUrl": "https://example.com/daftar",
       "ctaLabel": "Daftar Sekarang"

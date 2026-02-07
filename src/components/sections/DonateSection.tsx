@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 
 const DONATE_NOTE = `
 Mari Ambil Bagian dalam Kebaikan. Semoga menjadi amal jariyah. Jazaakumullahu khairan.
@@ -20,21 +19,19 @@ export function DonateSection() {
           Ingin mendukung? Scan QRIS di bawah untuk donasi.
         </p>
 
-        {/* QRIS: responsive — full width on small screens, max 14rem */}
+        {/* QRIS: fitted like EventsSection — no padding, image edge-to-edge */}
         <div className="flex justify-center mb-6">
-          <div className="relative w-full max-w-[14rem] aspect-square rounded-lg bg-slate-100 dark:bg-slate-800 overflow-hidden border border-slate-200 dark:border-slate-700">
-            {!qrisError && (
-              <Image
-                src="/qris.png"
+          <div className="w-full max-w-[20rem] sm:max-w-[24rem] rounded-lg overflow-hidden">
+            {!qrisError ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src="/qris.jpeg"
                 alt="QRIS Donasi"
-                fill
-                className="object-contain p-2"
-                sizes="(max-width: 384px) 100vw, 224px"
+                className="w-full h-auto block"
                 onError={() => setQrisError(true)}
               />
-            )}
-            {qrisError && (
-              <div className="absolute inset-0 flex items-center justify-center text-slate-500 dark:text-slate-400 text-center p-4 text-sm">
+            ) : (
+              <div className="flex min-h-[12rem] items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-400 text-center p-4 text-sm">
                 Flyer tidak tersedia
               </div>
             )}

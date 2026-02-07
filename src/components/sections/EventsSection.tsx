@@ -1,29 +1,27 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import eventsConfig from '@/config/events.json';
 import type { EventsConfig } from '@/types/events';
 
 const config = eventsConfig as EventsConfig;
 
-function EventFlyer({ src, alt, unoptimized }: { src: string; alt: string; unoptimized?: boolean }) {
+function EventFlyer({ src, alt }: { src: string; alt: string; unoptimized?: boolean }) {
   const [error, setError] = useState(false);
   if (error) {
     return (
-      <div className="absolute inset-0 flex items-center justify-center text-slate-500 dark:text-slate-400 text-center p-2 text-xs">
+      <div className="flex aspect-[5/6] min-h-[8rem] items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-400 text-center p-2 text-xs">
         Flyer tidak tersedia
       </div>
     );
   }
   return (
-    <Image
+    // Plain img so the flyer keeps its original aspect ratio (no crop)
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
       src={src}
       alt={alt}
-      fill
-      className="object-cover"
-      sizes="160px"
-      unoptimized={unoptimized}
+      className="w-full h-auto rounded-lg block"
       onError={() => setError(true)}
     />
   );
@@ -51,14 +49,12 @@ export function EventsSection() {
               className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-hidden shadow-sm"
             >
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-6">
-                <div className="flex-shrink-0 mx-auto sm:mx-0 w-full max-w-[10rem] sm:max-w-none sm:w-40">
-                  <div className="relative aspect-[5/6] w-full sm:h-48 sm:w-40 rounded-lg bg-slate-200 dark:bg-slate-700 overflow-hidden">
-                    <EventFlyer
-                      src={event.flyerUrl}
-                      alt={event.title}
-                      unoptimized={event.flyerUrl.startsWith('http')}
-                    />
-                  </div>
+                <div className="flex-shrink-0 mx-auto sm:mx-0 w-full max-w-[16rem] sm:max-w-[20rem] sm:w-80">
+                  <EventFlyer
+                    src={event.flyerUrl}
+                    alt={event.title}
+                    unoptimized={event.flyerUrl.startsWith('http')}
+                  />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">

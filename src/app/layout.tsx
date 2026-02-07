@@ -18,6 +18,9 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 };
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://www.arifinjayadiningrat.com';
+
 export const metadata: Metadata = {
   title: 'Khusyuk Itu Mudah | Arifin Jayadiningrat',
   description:
@@ -30,6 +33,21 @@ export const metadata: Metadata = {
     description:
       'Buku Khusyuk Itu Mudah. Pre-order sekarang!',
     type: 'website',
+    url: siteUrl,
+    images: [
+      {
+        url: `${siteUrl}/bookFlyer.jpeg`,
+        width: 1200,
+        height: 630,
+        alt: 'Khusyuk Itu Mudah',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Khusyuk Itu Mudah | Arifin Jayadiningrat',
+    description: 'Buku Khusyuk Itu Mudah. Pre-order sekarang!',
+    images: [`${siteUrl}/bookFlyer.jpeg`],
   },
 };
 

@@ -7,9 +7,11 @@ const BISMILLAH = 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّ
 const SYNOPSIS = `
 Banyak orang bertanya,
 Bagaimana salat bisa sampai menitikkan air mata?
-Pertanyaan ini muncul karena salat sering dijalani sebagai rutinitas. Gerakannya benar, bacaannya hafal, tetapi hati terasa jauh. Tanpa disadari, seseorang bisa saja sedang salat, namun ingatannya ke mana-mana. Di situlah bahaya terbesar: melupakan Allah saat sedang berdiri di hadapan-Nya.
+Pertanyaan ini muncul karena salat sering dijalani sebagai rutinitas. Gerakannya benar, bacaannya hafal, tetapi hati terasa jauh. Tanpa disadari, seseorang bisa saja sedang salat, namun ingatannya ke mana-mana. Di situlah kekurangan cukup fatal : melupakan Allah saat sedang berdiri di hadapan-Nya.
 
-Padahal Al-Qur’an menegaskan bahwa Allah menghendaki kemudahan. Allah tidak ingin memberatkan hamba-Nya, termasuk dalam ibadah yang paling agung: salat.
+Padahal Al-Qur’an menegaskan bahwa Allah menghendaki kemudahan dan Allah tidak ingin kesulitan bagi hambaNya.
+
+Tentu bila berpikir mendalam ternyata Allah memudahkan segala urusan termasuk dalam ibadah yang paling agung: SALAT.
 
 Buku ini membahas inti khusyu yang jarang dibahas. Dibuat dengan bahasa yang mudah dipahami agar meresap sampai ke hati. Buku ini hadir sebagai pengingat bahwa kemuliaan sejati ada pada kerendahan hati. Cocok untuk siapa saja yang ingin memperbaiki kualitas ibadah salatnya.
 `.trim();
@@ -55,7 +57,7 @@ export function BookSection() {
   const shareUrl =
     typeof window !== 'undefined'
       ? window.location.href
-      : process.env.NEXT_PUBLIC_SITE_URL || 'https://khusyuk-itu-mudah.vercel.app/';
+      : process.env.NEXT_PUBLIC_SITE_URL || 'https://www.arifinjayadiningrat.com/';
 
   const handleShare = useCallback(async () => {
     try {
