@@ -19,13 +19,16 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Khusyuk Itu Mudah | Buku Digital',
+  title: 'Khusyuk Itu Mudah | Arifin Jayadiningrat',
   description:
-    'Buku digital Khusyuk Itu Mudah. Unduh gratis dengan email, baca synopsis, beri masukan, dan dukung dengan donasi.',
+    'Buku Khusyuk Itu Mudah. Pre-order sekarang!',
+  icons: {
+    icon: '/logo.png',
+  },
   openGraph: {
-    title: 'Khusyuk Itu Mudah | Buku Digital',
+    title: 'Khusyuk Itu Mudah | Arifin Jayadiningrat',
     description:
-      'Buku digital Khusyuk Itu Mudah. Unduh gratis dengan email, baca synopsis, beri masukan, dan dukung dengan donasi.',
+      'Buku Khusyuk Itu Mudah. Pre-order sekarang!',
     type: 'website',
   },
 };
