@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
+    unoptimized: true, // required for static export: use /logo.png instead of /_next/image (no server on Domainesia)
     remotePatterns: [
       {
         protocol: 'https',

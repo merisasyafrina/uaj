@@ -1,6 +1,6 @@
 import { BookSection } from '@/components/sections/BookSection';
 import { BuySection } from '@/components/sections/BuySection';
-import { FeedbackSection } from '@/components/sections/FeedbackSection';
+// import { FeedbackSection } from '@/components/sections/FeedbackSection'; // Hidden for static export (Option B – Domainesia)
 import { DonateSection } from '@/components/sections/DonateSection';
 import { EventsSection } from '@/components/sections/EventsSection';
 
@@ -9,7 +9,7 @@ export default function HomePage() {
     <main className="min-h-screen">
       <BookSection />
       <BuySection />
-      <FeedbackSection />
+      {/* <FeedbackSection /> */}
       <DonateSection />
       <EventsSection />
     </main>
