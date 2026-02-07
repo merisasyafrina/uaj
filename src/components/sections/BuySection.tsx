@@ -18,7 +18,7 @@ export function BuySection() {
           Beli
         </h2>
 
-        {/* Book image */}
+        {/* Book image — intrinsic size so no letterboxing */}
         <div className="flex justify-center mb-8">
           <a
             href={orderUrl}
@@ -26,23 +26,21 @@ export function BuySection() {
             rel="noopener noreferrer"
             className="block rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
           >
-            <div className="relative w-[16.5rem] aspect-square rounded-xl bg-slate-200 dark:bg-slate-700">
-              {!coverError && (
-                <Image
-                  src="/bookFlyer.jpeg"
-                  alt="Sampul buku Khusyuk Itu Mudah"
-                  fill
-                  className="object-contain"
-                  sizes="264px"
-                  onError={() => setCoverError(true)}
-                />
-              )}
-              {coverError && (
-                <div className="absolute inset-0 flex items-center justify-center text-slate-500 dark:text-slate-400 text-center p-4">
-                  <span className="text-sm font-medium">Sampul buku</span>
-                </div>
-              )}
-            </div>
+            {!coverError ? (
+              <Image
+                src="/bookFlyer.jpeg"
+                alt="Sampul buku Khusyuk Itu Mudah"
+                width={800}
+                height={1200}
+                className="w-[16.5rem] h-auto rounded-xl block"
+                sizes="264px"
+                onError={() => setCoverError(true)}
+              />
+            ) : (
+              <div className="w-[16.5rem] aspect-[2/3] rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
+                <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Sampul buku</span>
+              </div>
+            )}
           </a>
         </div>
 

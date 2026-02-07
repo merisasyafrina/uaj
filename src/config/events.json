@@ -1,14 +1,22 @@
 {
-  "title": "Acara",
-  "subtitle": "Kajian dan kegiatan terkait buku Khusyuk Itu Mudah.",
+  "title": "📚 Ikuti Kajian Rutin",
+  "subtitle": "Mari luangkan waktu untuk menambah ilmu dan menguatkan iman melalui kajian rutin.",
   "events": [
     {
       "id": "event-1",
-      "title": "Kajian Khusyuk Itu Mudah",
-      "description": "Kajian perdana peluncuran buku digital Khusyuk Itu Mudah. Mari hadir dan dapatkan insight langsung dari penulis.",
+      "title": "🕌 Kuliah Subuh",
+      "description": "Mari raih keberkahan ilmu di pagi yang penuh cahaya! Ajak keluarga & sahabat tercinta untuk ikut serta",
       "flyerUrl": "/events/flyer-placeholder.jpg",
-      "startDate": "2025-03-15",
-      "endDate": "2025-03-15",
+      "date": "⏰ Setiap hari | Pukul 05.00 WIB",
+      "ctaUrl": "https://example.com/daftar",
+      "ctaLabel": "Daftar Sekarang"
+    },
+    {
+      "id": "event-2",
+      "title": "📖 Kajian Pekanan",
+      "description": "Rasulullah ﷺ bersabda:\nBarang siapa menempuh jalan untuk menuntut ilmu, maka Allah akan mudahkan baginya jalan menuju surga.\n(HR. Sahih Muslim no. 2699).",
+      "flyerUrl": "/events/flyer-placeholder.jpg",
+      "date": "⏰ Setiap hari Senin | Pukul 09.00 WIB",
       "ctaUrl": "https://example.com/daftar",
       "ctaLabel": "Daftar Sekarang"
     }

@@ -64,27 +64,13 @@ export function EventsSection() {
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
                     {event.title}
                   </h3>
-                  {(event.startDate || event.endDate) && (
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-3">
-                      {event.startDate &&
-                        new Date(event.startDate).toLocaleDateString('id-ID', {
-                          day: 'numeric',
-                          month: 'long',
-                          year: 'numeric',
-                        })}
-                      {event.endDate &&
-                        event.endDate !== event.startDate &&
-                        ` – ${new Date(event.endDate).toLocaleDateString('id-ID', {
-                          day: 'numeric',
-                          month: 'long',
-                          year: 'numeric',
-                        })}`}
-                    </p>
-                  )}
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-3">
+                    {event.date}
+                  </p>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 whitespace-pre-line">
                     {event.description}
                   </p>
-                  {event.ctaUrl && (
+                  {/* {event.ctaUrl && (
                     <a
                       href={event.ctaUrl}
                       target="_blank"
@@ -93,7 +79,7 @@ export function EventsSection() {
                     >
                       {event.ctaLabel || 'Info lengkap'}
                     </a>
-                  )}
+                  )} */}
                 </div>
               </div>
             </article>
