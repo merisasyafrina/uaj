@@ -26,14 +26,14 @@ export function BuySection() {
             rel="noopener noreferrer"
             className="block rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
           >
-            <div className="relative w-44 sm:w-52 aspect-[4/5] rounded-xl bg-slate-200 dark:bg-slate-700">
+            <div className="relative w-[16.5rem] aspect-square rounded-xl bg-slate-200 dark:bg-slate-700">
               {!coverError && (
                 <Image
                   src="/bookFlyer.jpeg"
                   alt="Sampul buku Khusyuk Itu Mudah"
                   fill
                   className="object-contain"
-                  sizes="(max-width: 640px) 176px, 208px"
+                  sizes="264px"
                   onError={() => setCoverError(true)}
                 />
               )}

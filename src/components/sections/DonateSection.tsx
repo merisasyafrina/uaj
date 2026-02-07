@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 const DONATE_NOTE = `
-Donasi Anda membantu kami menyebarkan konten berkualitas secara gratis. Semoga menjadi amal jariyah. Jazakumullah khairan.
+Mari Ambil Bagian dalam Kebaikan. Semoga menjadi amal jariyah. Jazaakumullahu khairan.
 `.trim();
 
 export function DonateSection() {

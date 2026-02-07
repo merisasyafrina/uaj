@@ -7,6 +7,7 @@ const TOPICS: string[] = [
   'Request pelatihan',
   'Request pengajian',
   'Kesan pesan pembaca',
+  'Tanya Ustadz',
   'Lainnya',
 ];
 
