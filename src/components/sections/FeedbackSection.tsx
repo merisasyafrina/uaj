@@ -3,10 +3,11 @@
 import { useState } from 'react';
 
 const TOPICS: string[] = [
-  'Pertanyaan tentang buku',
-  'Masukan / saran',
-  'Laporan kesalahan',
-  'Kerja sama',
+  'Request bedah buku',
+  'Request pelatihan',
+  'Request pengajian',
+  'Kesan pesan pembaca',
+  'Tanya Ustadz',
   'Lainnya',
 ];
 

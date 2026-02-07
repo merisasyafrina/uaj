@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 const DONATE_NOTE = `
-Donasi Anda membantu kami menyebarkan konten berkualitas secara gratis. Semoga menjadi amal jariyah. Jazakumullah khairan.
+Mari Ambil Bagian dalam Kebaikan. Semoga menjadi amal jariyah. Jazaakumullahu khairan.
 `.trim();
 
 export function DonateSection() {
@@ -35,7 +35,7 @@ export function DonateSection() {
             )}
             {qrisError && (
               <div className="absolute inset-0 flex items-center justify-center text-slate-500 dark:text-slate-400 text-center p-4 text-sm">
-                <span>Letakkan gambar QRIS di <code className="bg-slate-200 dark:bg-slate-700 px-1 rounded">public/qris.png</code></span>
+                Flyer tidak tersedia
               </div>
             )}
           </div>

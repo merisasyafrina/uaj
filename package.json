@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:static": "node -e \"const fs=require('fs'); const p='src/app/api', b='api_routes_backup'; if(fs.existsSync(p)){ fs.renameSync(p,b); require('child_process').execSync('next build',{stdio:'inherit'}); fs.renameSync(b,p); } else { require('child_process').execSync('next build',{stdio:'inherit'}); }\"",
     "start": "next start",
     "lint": "next lint"
   },

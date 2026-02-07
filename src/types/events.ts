@@ -3,8 +3,7 @@ export type EventItem = {
   title: string;
   description: string;
   flyerUrl: string; // path in public/ or full URL
-  startDate?: string; // ISO date
-  endDate?: string;
+  date?: string;
   ctaUrl?: string;
   ctaLabel?: string;
 };
