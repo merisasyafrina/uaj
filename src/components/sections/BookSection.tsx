@@ -25,6 +25,9 @@ Moto utama mengumpulkan bekal akhirat untuk kehidupan yang abadi.
  `.trim();
 
 const SHARE_TITLE = 'Khusyuk Itu Mudah';
+const SHARE_DESCRIPTION = `Buku ini ditulis untuk menemani perjalanan hati. Terutama bagi yang ingin salat lebih tenang, hadir, dan dekat dengan Allah.
+
+Cek selengkapnya di:`;
 
 function ShareIcon({ className }: { className?: string }) {
   return (
@@ -59,18 +62,20 @@ export function BookSection() {
       ? window.location.href
       : process.env.NEXT_PUBLIC_SITE_URL || 'https://www.arifinjayadiningrat.com/';
 
+  const shareText = `${SHARE_TITLE}\n\n${SHARE_DESCRIPTION}\n${shareUrl}`;
+
   const handleShare = useCallback(async () => {
     try {
       if (typeof navigator !== 'undefined' && navigator.share) {
         await navigator.share({
           title: SHARE_TITLE,
-          text: SHARE_TITLE,
+          text: shareText,
           url: shareUrl,
         });
         return;
       }
       if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(shareUrl);
+        await navigator.clipboard.writeText(shareText);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       }
@@ -78,7 +83,7 @@ export function BookSection() {
       if ((err as Error).name === 'AbortError') return;
       try {
         if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
-          await navigator.clipboard.writeText(shareUrl);
+          await navigator.clipboard.writeText(shareText);
           setCopied(true);
           setTimeout(() => setCopied(false), 2000);
         }
@@ -86,7 +91,7 @@ export function BookSection() {
         // ignore
       }
     }
-  }, [shareUrl]);
+  }, [shareUrl, shareText]);
 
   return (
     <section className="relative overflow-hidden bg-slate-50 dark:bg-slate-900/50 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
