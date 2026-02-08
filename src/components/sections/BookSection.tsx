@@ -62,20 +62,21 @@ export function BookSection() {
       ? window.location.href
       : process.env.NEXT_PUBLIC_SITE_URL || 'https://www.arifinjayadiningrat.com/';
 
-  const shareText = `${SHARE_TITLE}\n\n${SHARE_DESCRIPTION}\n${shareUrl}`;
+  const shareTextForApi = `${SHARE_TITLE}\n\n${SHARE_DESCRIPTION}`;
+  const shareTextForClipboard = `${SHARE_TITLE}\n\n${SHARE_DESCRIPTION}\n${shareUrl}`;
 
   const handleShare = useCallback(async () => {
     try {
       if (typeof navigator !== 'undefined' && navigator.share) {
         await navigator.share({
           title: SHARE_TITLE,
-          text: shareText,
+          text: shareTextForApi,
           url: shareUrl,
         });
         return;
       }
       if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(shareText);
+        await navigator.clipboard.writeText(shareTextForClipboard);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       }
@@ -83,7 +84,7 @@ export function BookSection() {
       if ((err as Error).name === 'AbortError') return;
       try {
         if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
-          await navigator.clipboard.writeText(shareText);
+          await navigator.clipboard.writeText(shareTextForClipboard);
           setCopied(true);
           setTimeout(() => setCopied(false), 2000);
         }
@@ -91,7 +92,7 @@ export function BookSection() {
         // ignore
       }
     }
-  }, [shareUrl, shareText]);
+  }, [shareUrl, shareTextForApi, shareTextForClipboard]);
 
   return (
     <section className="relative overflow-hidden bg-slate-50 dark:bg-slate-900/50 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
