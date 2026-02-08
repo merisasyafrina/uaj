@@ -7,9 +7,11 @@ const BISMILLAH = 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّ
 const SYNOPSIS = `
 Banyak orang bertanya,
 Bagaimana salat bisa sampai menitikkan air mata?
-Pertanyaan ini muncul karena salat sering dijalani sebagai rutinitas. Gerakannya benar, bacaannya hafal, tetapi hati terasa jauh. Tanpa disadari, seseorang bisa saja sedang salat, namun ingatannya ke mana-mana. Di situlah bahaya terbesar: melupakan Allah saat sedang berdiri di hadapan-Nya.
+Pertanyaan ini muncul karena salat sering dijalani sebagai rutinitas. Gerakannya benar, bacaannya hafal, tetapi hati terasa jauh. Tanpa disadari, seseorang bisa saja sedang salat, namun ingatannya ke mana-mana. Di situlah kekurangan cukup fatal : melupakan Allah saat sedang berdiri di hadapan-Nya.
 
-Padahal Al-Qur’an menegaskan bahwa Allah menghendaki kemudahan. Allah tidak ingin memberatkan hamba-Nya, termasuk dalam ibadah yang paling agung: salat.
+Padahal Al-Qur’an menegaskan bahwa Allah menghendaki kemudahan dan Allah tidak ingin kesulitan bagi hambaNya.
+
+Tentu bila berpikir mendalam ternyata Allah memudahkan segala urusan termasuk dalam ibadah yang paling agung: SALAT.
 
 Buku ini membahas inti khusyu yang jarang dibahas. Dibuat dengan bahasa yang mudah dipahami agar meresap sampai ke hati. Buku ini hadir sebagai pengingat bahwa kemuliaan sejati ada pada kerendahan hati. Cocok untuk siapa saja yang ingin memperbaiki kualitas ibadah salatnya.
 `.trim();
@@ -23,6 +25,9 @@ Moto utama mengumpulkan bekal akhirat untuk kehidupan yang abadi.
  `.trim();
 
 const SHARE_TITLE = 'Khusyuk Itu Mudah';
+const SHARE_DESCRIPTION = `Buku ini ditulis untuk menemani perjalanan hati. Terutama bagi yang ingin salat lebih tenang, hadir, dan dekat dengan Allah.
+
+Cek selengkapnya di:`;
 
 function ShareIcon({ className }: { className?: string }) {
   return (
@@ -55,20 +60,22 @@ export function BookSection() {
   const shareUrl =
     typeof window !== 'undefined'
       ? window.location.href
-      : process.env.NEXT_PUBLIC_SITE_URL || 'https://khusyuk-itu-mudah.vercel.app/';
+      : process.env.NEXT_PUBLIC_SITE_URL || 'https://www.arifinjayadiningrat.com/';
+
+  const shareText = `${SHARE_TITLE}\n\n${SHARE_DESCRIPTION}\n${shareUrl}`;
 
   const handleShare = useCallback(async () => {
     try {
       if (typeof navigator !== 'undefined' && navigator.share) {
         await navigator.share({
           title: SHARE_TITLE,
-          text: SHARE_TITLE,
+          text: shareText,
           url: shareUrl,
         });
         return;
       }
       if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(shareUrl);
+        await navigator.clipboard.writeText(shareText);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       }
@@ -76,7 +83,7 @@ export function BookSection() {
       if ((err as Error).name === 'AbortError') return;
       try {
         if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
-          await navigator.clipboard.writeText(shareUrl);
+          await navigator.clipboard.writeText(shareText);
           setCopied(true);
           setTimeout(() => setCopied(false), 2000);
         }
@@ -84,7 +91,7 @@ export function BookSection() {
         // ignore
       }
     }
-  }, [shareUrl]);
+  }, [shareUrl, shareText]);
 
   return (
     <section className="relative overflow-hidden bg-slate-50 dark:bg-slate-900/50 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
