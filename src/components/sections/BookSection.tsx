@@ -65,6 +65,18 @@ export function BookSection() {
   const shareTextForApi = `${SHARE_TITLE}\n\n${SHARE_DESCRIPTION}`;
   const shareTextForClipboard = `${SHARE_TITLE}\n\n${SHARE_DESCRIPTION}\n${shareUrl}`;
 
+  const copyFullToClipboard = useCallback(() => {
+    if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(shareTextForClipboard).then(
+        () => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+        },
+        () => {}
+      );
+    }
+  }, [shareTextForClipboard]);
+
   const handleShare = useCallback(async () => {
     try {
       if (typeof navigator !== 'undefined' && navigator.share) {
@@ -73,26 +85,22 @@ export function BookSection() {
           text: shareTextForApi,
           url: shareUrl,
         });
+        copyFullToClipboard();
         return;
       }
-      if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(shareTextForClipboard);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      }
+      copyFullToClipboard();
     } catch (err) {
-      if ((err as Error).name === 'AbortError') return;
+      if ((err as Error).name === 'AbortError') {
+        copyFullToClipboard();
+        return;
+      }
       try {
-        if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
-          await navigator.clipboard.writeText(shareTextForClipboard);
-          setCopied(true);
-          setTimeout(() => setCopied(false), 2000);
-        }
+        copyFullToClipboard();
       } catch {
         // ignore
       }
     }
-  }, [shareUrl, shareTextForApi, shareTextForClipboard]);
+  }, [shareUrl, shareTextForApi, shareTextForClipboard, copyFullToClipboard]);
 
   return (
     <section className="relative overflow-hidden bg-slate-50 dark:bg-slate-900/50 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
