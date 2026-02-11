@@ -52,7 +52,7 @@ export function BuySection() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-8 py-4 min-h-[52px] text-base font-semibold text-white shadow-md transition-all duration-200 hover:bg-orange-600 hover:shadow-lg hover:-translate-y-0.5 active:bg-orange-700 active:translate-y-0 active:shadow touch-manipulation"
           >
-            Pre-order Sekarang
+            Baca Sekarang
           </a>
         </div>
       </div>
