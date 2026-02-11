@@ -27,7 +27,7 @@ export function Header() {
             href="#beli"
             className="whitespace-nowrap text-sm text-white/90 transition-colors hover:text-white"
           >
-            Pre-order Buku
+            Baca Sekarang
           </SmoothScrollLink>
         </nav>
       </div>
