@@ -56,7 +56,7 @@ export function BulkOrderSection() {
             )}
         </div>
         <p className="text-xs sm:text-sm italic text-slate-500 dark:text-slate-500 text-center mb-6 sm:mb-8">
-            *Minimal pemesanan 50 buku.
+            *Minimal pemesanan 10 buku.
             <br />
             *Harga per buku adalah Rp. 110.000.
             <br />
