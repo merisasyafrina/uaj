@@ -24,14 +24,14 @@ const siteUrl =
 export const metadata: Metadata = {
   title: 'Khusyuk Itu Mudah | Arifin Jayadiningrat',
   description:
-    'Buku Khusyuk Itu Mudah. Pre-order sekarang!',
+    'Buku Khusyuk Itu Mudah. Baca sekarang!',
   icons: {
     icon: '/logo.png',
   },
   openGraph: {
     title: 'Khusyuk Itu Mudah | Arifin Jayadiningrat',
     description:
-      'Buku Khusyuk Itu Mudah. Pre-order sekarang!',
+      'Buku Khusyuk Itu Mudah. Baca sekarang!',
     type: 'website',
     url: siteUrl,
     images: [
@@ -42,12 +42,6 @@ export const metadata: Metadata = {
         alt: 'Khusyuk Itu Mudah',
       },
     ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Khusyuk Itu Mudah | Arifin Jayadiningrat',
-    description: 'Buku Khusyuk Itu Mudah. Pre-order sekarang!',
-    images: [`${siteUrl}/bookFlyer.jpeg`],
   },
 };
 
