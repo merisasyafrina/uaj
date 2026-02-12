@@ -26,7 +26,8 @@ export const metadata: Metadata = {
   description:
     'Buku Khusyuk Itu Mudah. Baca sekarang!',
   icons: {
-    icon: '/logo.png',
+    icon: '/logo.png?v=2',
+    apple: '/logo.png?v=2',
   },
   openGraph: {
     title: 'Khusyuk Itu Mudah | Arifin Jayadiningrat',
