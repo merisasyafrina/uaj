@@ -23,9 +23,9 @@ Aktif sebagai ketua di Aksi Peduli Bangsa, Yayasan Pendidikan Islam Al Madaniyah
  `.trim();
 
 const SHARE_TITLE = 'Khusyuk Itu Mudah';
-const SHARE_DESCRIPTION = `Buku ini ditulis untuk menemani perjalanan hati. Terutama bagi yang ingin salat lebih tenang, hadir, dan dekat dengan Allah.
+const SHARE_DESCRIPTION = `Bagaimana salat bisa sampai menitikkan air mata?
 
-Cek selengkapnya di:`;
+Baca selengkapnya di:`;
 
 function ShareIcon({ className }: { className?: string }) {
   return (
