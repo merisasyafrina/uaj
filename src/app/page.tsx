@@ -4,6 +4,7 @@ import { BuySection } from '@/components/sections/BuySection';
 // import { FeedbackSection } from '@/components/sections/FeedbackSection'; // Hidden for static export (Option B – Domainesia)
 import { DonateSection } from '@/components/sections/DonateSection';
 import { EventsSection } from '@/components/sections/EventsSection';
+import { WPDynamicSection } from '@/components/sections/WPDynamicSection';
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <BulkOrderSection />
       <DonateSection />
       <EventsSection />
+      <WPDynamicSection />
     </main>
   );
 }

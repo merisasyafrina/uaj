@@ -1,0 +1,28 @@
+{
+  "sections": [
+    {
+      "id": "wp-section-1",
+      "backgroundColor": "#f8fafc",
+      "title": {
+        "text": "Contoh section dari WordPress",
+        "tag": "h2",
+        "italic": false,
+        "color": "#0f172a"
+      },
+        "description": {
+        "text": "Ini deskripsi yang bisa diatur dari WP: level (H1/H2/H3/p), italic, dan warna teks.",
+        "tag": "p",
+        "italic": true,
+        "color": "#64748b"
+      },
+      "image": {
+        "url": "/bulkOrder.jpeg",
+        "alt": "Sampul buku Khusyuk Itu Mudah"
+      },
+      "cta": {
+        "href": "https://wa.me/628131214371",
+        "label": "Hubungi via WhatsApp"
+      }
+    }
+  ]
+}
