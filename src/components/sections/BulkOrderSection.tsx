@@ -5,15 +5,35 @@ import Image from 'next/image';
 
 const WHATSAPP_NUMBER = '6287883261246';
 
-const CONFIRMATION_TEXT = `Assalamualaikum warahmatullahi wabarakatuh, 
-Bismillah konfirmasi pemesanan buku Khusyuk Itu Mudah (bulk order).
+const CONFIRMATION_TEXT = `📚 KONFIRMASI PEMESANAN BUKU – BULK ORDER
+Khusyuk Itu Mudah
 
-[Nama pemesan]:
-[Jumlah buku]:
-[Total transfer]:
-[Bank pengirim]:
+Assalamualaikum warahmatullahi wabarakatuh,
+Bismillah, Mohon dilengkapi data ini terlebih dahulu:
 
-Terlampir bukti transfer nya.`;
+📝 Data Pemesan
+Nama Lengkap:
+No. HP/WhatsApp:
+Alamat Lengkap (sertakan kode pos):
+
+📦 Detail Pesanan
+Judul Buku: Khusyuk Itu Mudah
+Jumlah Buku: _ eksemplar
+Harga Satuan: Rp 110.000
+Subtotal Buku: Rp _
+
+🚚 Pengiriman
+Jasa Ekspedisi: (JNE/J&T/SiCepat/dll)
+Ongkos Kirim: Rp _
+Estimasi Pengiriman: _ hari
+
+💳 Pembayaran
+Total Transfer (Buku + Ongkir): Rp _
+Bank Pengirim:
+Nama Pemilik Rekening:
+Tanggal Transfer:
+
+📎 Terlampir bukti transfer.`;
 
 const whatsappConfirmUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(CONFIRMATION_TEXT)}`;
 
@@ -58,7 +78,7 @@ export function BulkOrderSection() {
         <p className="text-xs sm:text-sm italic text-slate-500 dark:text-slate-500 text-center mb-6 sm:mb-8">
             *Minimal pemesanan 50 buku.
             <br />
-            *Harga per buku adalah Rp. 110.000.
+            <strong>*Harga per buku adalah Rp. 110.000 (diluar ongkir).</strong>
             <br />
             <span className="not-italic">Contoh: Order 50 buku, dengan harga total Rp. 5.500.000.</span>
         </p>
