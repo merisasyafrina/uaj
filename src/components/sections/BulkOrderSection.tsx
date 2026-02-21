@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-const WHATSAPP_NUMBER = '6287883261246';
+const WHATSAPP_NUMBER = '628131214371';
 
 const CONFIRMATION_TEXT = `📚 KONFIRMASI PEMESANAN BUKU – BULK ORDER
 Khusyuk Itu Mudah
