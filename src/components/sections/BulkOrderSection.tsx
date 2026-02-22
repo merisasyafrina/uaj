@@ -18,22 +18,10 @@ Alamat Lengkap (sertakan kode pos):
 
 📦 Detail Pesanan
 Judul Buku: Khusyuk Itu Mudah
-Jumlah Buku: _ eksemplar
+Jumlah Buku: ___ eksemplar
 Harga Satuan: Rp 110.000
-Subtotal Buku: Rp _
-
-🚚 Pengiriman
-Jasa Ekspedisi: (JNE/J&T/SiCepat/dll)
-Ongkos Kirim: Rp _
-Estimasi Pengiriman: _ hari
-
-💳 Pembayaran
-Total Transfer (Buku + Ongkir): Rp _
-Bank Pengirim:
-Nama Pemilik Rekening:
-Tanggal Transfer:
-
-📎 Terlampir bukti transfer.`;
+Subtotal Buku: Rp ___
+Ongkir:`;
 
 const whatsappConfirmUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(CONFIRMATION_TEXT)}`;
 
@@ -58,7 +46,7 @@ export function BulkOrderSection() {
             Pesan banyak untuk sekolahmu, komunitasmu, keluargamu, kantormu, dan lainnya.
         </h2>
 
-        <div className="flex justify-center mb-8">
+        {/* <div className="flex justify-center mb-8">
             {!coverError ? (
                 <Image
                 src="/bulkOrder.jpeg"
@@ -74,7 +62,7 @@ export function BulkOrderSection() {
                 <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Sampul buku</span>
                 </div>
             )}
-        </div>
+        </div> */}
         <p className="text-xs sm:text-sm italic text-slate-500 dark:text-slate-500 text-center mb-6 sm:mb-8">
             *Minimal pemesanan 50 buku.
             <br />
