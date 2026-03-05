@@ -95,8 +95,6 @@ export function BulkOrderSection() {
 
         <p className="text-xs sm:text-sm italic text-slate-500 dark:text-slate-500 text-center mb-6 sm:mb-8">
             <strong>*Harga per buku adalah Rp. 110.000 (diluar ongkir).</strong>
-            <br />
-            <span className="not-italic">Contoh: Order 50 buku, dengan harga total Rp. 5.500.000.</span>
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-3">
