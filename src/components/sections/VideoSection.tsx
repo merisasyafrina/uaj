@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 // Video ID from URL: youtu.be/ugh-z8KNgT0 or youtube.com/watch?v=ugh-z8KNgT0
-const YOUTUBE_VIDEO_ID = 'ugh-z8KNgT0';
+const YOUTUBE_VIDEO_ID: string = '9l0udCYaDXY';
 
 const THUMBNAIL_URL = `https://img.youtube.com/vi/${YOUTUBE_VIDEO_ID}/maxresdefault.jpg`;
 const THUMBNAIL_FALLBACK = `https://img.youtube.com/vi/${YOUTUBE_VIDEO_ID}/hqdefault.jpg`;
