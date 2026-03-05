@@ -12,7 +12,7 @@ export function BuySection() {
   const [coverError, setCoverError] = useState(false);
 
   return (
-    <section id="beli" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900">
       <div className="mx-auto max-w-xl">
         <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white text-center mb-6">
           <span className='italic text-slate-500 dark:text-slate-500 text-center mb-6 sm:mb-8'>Dapatkan buku</span>

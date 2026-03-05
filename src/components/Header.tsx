@@ -24,7 +24,7 @@ export function Header() {
         </Link>
         <nav className="flex shrink-0 items-center" aria-label="Navigasi utama">
           <SmoothScrollLink
-            href="#beli"
+            href="#bulk-order"
             className="whitespace-nowrap text-sm text-white/90 transition-colors hover:text-white"
           >
             Baca Sekarang
