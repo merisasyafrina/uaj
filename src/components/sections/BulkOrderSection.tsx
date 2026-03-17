@@ -9,7 +9,7 @@ const orderUrl =
     ? window.location.href
     : process.env.NEXT_PUBLIC_SITE_URL || 'https://s.id/pobukukhusyuk';
 
-const CONFIRMATION_TEXT = `📚 KONFIRMASI PEMESANAN BUKU – BULK ORDER
+const CONFIRMATION_TEXT = `📚 KONFIRMASI PEMESANAN BUKU
 Khusyuk Itu Mudah
 
 Assalamualaikum warahmatullahi wabarakatuh,
@@ -77,7 +77,7 @@ export function BulkOrderSection() {
           >
             {!coverError ? (
               <Image
-                src="/bookFlyer.jpeg"
+                src="/bookFlyer.jpg"
                 alt="Sampul buku Khusyuk Itu Mudah"
                 width={800}
                 height={1200}
