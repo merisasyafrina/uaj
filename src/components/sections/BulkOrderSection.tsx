@@ -3,13 +3,13 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-const WHATSAPP_NUMBER = '628131214371';
+const WHATSAPP_NUMBER = '628176671188';
 const orderUrl =
   typeof window !== 'undefined'
     ? window.location.href
     : process.env.NEXT_PUBLIC_SITE_URL || 'https://s.id/pobukukhusyuk';
 
-const CONFIRMATION_TEXT = `📚 KONFIRMASI PEMESANAN BUKU
+const CONFIRMATION_TEXT = `📚 KONFIRMASI PEMESANAN BUKU –
 Khusyuk Itu Mudah
 
 Assalamualaikum warahmatullahi wabarakatuh,
@@ -25,7 +25,20 @@ Judul Buku: Khusyuk Itu Mudah
 Jumlah Buku: ___ eksemplar
 Harga Satuan: Rp 110.000
 Subtotal Buku: Rp ___
-Ongkir:`;
+
+🚚 Pengiriman
+Jasa Ekspedisi: (JNE/J&T/SiCepat/dll)
+Ongkos Kirim: Rp ___
+Estimasi Pengiriman: ___ hari
+
+💳 Pembayaran
+Total Transfer (Buku + Ongkir): Rp ___
+No Rekening : BSI 735 187 5075
+Nama Pemilik Rekening: Aksi Peduli Bangsa
+
+Tanggal Transfer:
+
+📎 mohon lampirkan bukti transfer.`;
 
 const whatsappConfirmUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(CONFIRMATION_TEXT)}`;
 
@@ -77,7 +90,7 @@ export function BulkOrderSection() {
           >
             {!coverError ? (
               <Image
-                src="/bookFlyer.jpg"
+                src="/bookFlyer.jpeg"
                 alt="Sampul buku Khusyuk Itu Mudah"
                 width={800}
                 height={1200}
